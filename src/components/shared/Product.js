@@ -16,7 +16,7 @@ const Product = ({ productData }) => {
       <p>Category : {category} </p>
       <Rating name="half-rating" defaultValue={rate} precision={0.5} readOnly />
       <div>
-        <Link to={`/products/${id}`}>Details</Link>
+        <Link to={`/products/${category}/${id}`}>Details</Link>
         <div>
           {itemCount(state, id) > 1 && (
             <button
