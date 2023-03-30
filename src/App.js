@@ -6,6 +6,8 @@ import ProductDetails from "./components/ProductDetails";
 import Cart from "./components/Cart";
 import Navbar from "./components/shared/Navbar";
 import Category from "./components/shared/Category";
+import Footer from "./components/shared/Footer";
+
 
 // Contexts
 import ProductsContextProvider from "./contexts/ProductsContextProvider";
@@ -23,6 +25,7 @@ function App() {
           <Route path="/products/:category" element={<Category />} />
           <Route path="/*" element={<Navigate to="/products" />} />
         </Routes>
+        <Footer/>
       </CartContextProvider>
     </ProductsContextProvider>
   );
