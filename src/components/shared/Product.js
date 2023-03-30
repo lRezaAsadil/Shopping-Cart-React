@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Rating } from "@mui/material";
-import { shorten } from "../../helper/functions";
-
+import { isInCart, itemCount, shorten } from "../../helper/functions";
+import { CartContext } from "../../contexts/CartContextProvider";
+import trash from "../../assets/icons/trash.svg";
 const Product = ({ productData }) => {
   const { id, title, price, category, image, rating } = productData;
   const { rate } = rating;
+  const { state, dispatch } = useContext(CartContext);
   return (
     <div>
       <img src={image} alt={title} style={{ width: "250px" }} />
@@ -16,7 +18,38 @@ const Product = ({ productData }) => {
       <div>
         <Link to={`/products/${id}`}>Details</Link>
         <div>
-          <button>Add to Cart</button>
+          {itemCount(state, id) > 1 && (
+            <button
+              onClick={() =>
+                dispatch({ type: "DECREASE", payload: productData })
+              }>
+              -
+            </button>
+          )}
+          {itemCount(state, id) === 1 && (
+            <button
+              onClick={() =>
+                dispatch({ type: "REMOVE_ITEM", payload: productData })
+              }>
+              <img src={trash} alt="icon" style={{ width: "20px" }} />
+            </button>
+          )}
+          {itemCount(state, id) > 0 && <span> {itemCount(state, id)}</span>}
+          {isInCart(state, id) ? (
+            <button
+              onClick={() =>
+                dispatch({ type: "INCREASE", payload: productData })
+              }>
+              +
+            </button>
+          ) : (
+            <button
+              onClick={() =>
+                dispatch({ type: "ADD_ITEM", payload: productData })
+              }>
+              Add ro Cart
+            </button>
+          )}
         </div>
       </div>
     </div>

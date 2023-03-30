@@ -6,3 +6,15 @@ export const shorten = (title) => {
     return `${splitedTitle[0]} ${splitedTitle[1]}`;
   }
 };
+export const isInCart = (state, id) => {
+  const result = !!state.selecedItems.find((item) => item.id === id);
+  return result;
+};
+export const itemCount = (state, id) => {
+  const index = state.selecedItems.findIndex((item) => item.id === id);
+  if(index ===-1){
+    return false
+  }else{
+    return state.selecedItems[index].quantity
+  }
+};
