@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Rating } from "@mui/material";
 import { shorten } from "../../helper/functions";
 
 const Product = ({ productData }) => {
-  const { title, price, category, image, rating } = productData;
+  const { id, title, price, category, image, rating } = productData;
   const { rate } = rating;
   return (
     <div>
@@ -13,7 +14,7 @@ const Product = ({ productData }) => {
       <p>Category : {category} </p>
       <Rating name="half-rating" defaultValue={rate} precision={0.5} readOnly />
       <div>
-        <a href="#/">Details</a>
+        <Link to={`/products/${id}`}>Details</Link>
         <div>
           <button>Add to Cart</button>
         </div>
