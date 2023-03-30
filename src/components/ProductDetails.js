@@ -5,23 +5,24 @@ import { ProductsContext } from "../contexts/ProductsContextProvider";
 import { isInCart, itemCount } from "../helper/functions";
 import { CartContext } from "../contexts/CartContextProvider";
 import trash from "../assets/icons/trash.svg";
+import Styles from "./ProductDetails.module.css";
 
 const ProductDetails = () => {
   const params = useParams();
   const id = params.id - 1;
   const data = useContext(ProductsContext);
   const product = data[id];
-  const { title, price, category, image, rating } = product;
+  const { title, price, category, description, image, rating } = product;
   const { rate } = rating;
   const { state, dispatch } = useContext(CartContext);
   console.log(state);
   return (
-    <div>
-      <img src={image} alt={title} />
-      <div>
+    <div className={Styles.container}>
+      <img className={Styles.image} src={image} alt={title} />
+      <div className={Styles.textContainer}>
         <h3>{title}</h3>
-        <p></p>
-        <p>Category : {category}</p>
+        <p className={Styles.description}>{description}</p>
+        <p className={Styles.category}>Category : {category}</p>
         <Rating
           name="half-rating"
           defaultValue={rate}
@@ -29,8 +30,8 @@ const ProductDetails = () => {
           readOnly
         />
 
-        <div>
-          <span> {price} $ </span>
+        <div className={Styles.buttonContainer}>
+          <span className={Styles.price}> {price} $ </span>
 
           <div>
             {itemCount(state, product.id) > 1 && (

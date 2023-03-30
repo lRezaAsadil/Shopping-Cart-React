@@ -12,6 +12,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    bottom: -300px;
 }
 
 .social-icon,
