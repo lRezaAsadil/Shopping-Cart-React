@@ -1,4 +1,3 @@
-import { Card } from "@mui/material";
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { ProductsContext } from "../../contexts/ProductsContextProvider";
