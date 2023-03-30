@@ -1,3 +1,5 @@
+import { Routes, Route, Navigate } from "react-router-dom";
+
 // Componenrs
 import Store from "./components/Store";
 
@@ -7,7 +9,10 @@ import ProductsContextProvider from "./contexts/ProductsContextProvider";
 function App() {
   return (
     <ProductsContextProvider>
-      <Store />
+      <Routes>
+        <Route path="/products" element={<Store />} />
+        <Route path="/*" element={<Navigate to="/products"/>}/>
+      </Routes>
     </ProductsContextProvider>
   );
 }
