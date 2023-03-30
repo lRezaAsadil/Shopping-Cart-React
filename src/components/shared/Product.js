@@ -9,7 +9,7 @@ const Product = ({ productData }) => {
     <div>
       <img src={image} alt={title} style={{ width: "250px" }} />
       <h3>{shorten(title)}</h3>
-      <p>{price}</p>
+      <p>{price} $</p>
       <p>Category : {category} </p>
       <Rating name="half-rating" defaultValue={rate} precision={0.5} readOnly />
       <div>
