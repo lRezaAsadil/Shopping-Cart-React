@@ -1,10 +1,14 @@
-import './App.css';
+// Componenrs
+import Store from "./components/Store";
+
+// Contexts
+import ProductsContextProvider from "./contexts/ProductsContextProvider";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Shop</h1>
-    </div>
+    <ProductsContextProvider>
+      <Store />
+    </ProductsContextProvider>
   );
 }
 
