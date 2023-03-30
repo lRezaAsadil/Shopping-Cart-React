@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 // Componenrs
 import Store from "./components/Store";
 import ProductDetails from "./components/ProductDetails";
+import Cart from "./components/Cart";
 import Navbar from "./components/shared/Navbar";
 import Category from "./components/shared/Category";
 
@@ -16,6 +17,7 @@ function App() {
       <CartContextProvider>
         <Navbar />
         <Routes>
+          <Route path="/cart" element={<Cart />} />
           <Route path="/products" element={<Store />} />
           <Route path="/products/:category/:id" element={<ProductDetails />} />
           <Route path="/products/:category" element={<Category />} />
