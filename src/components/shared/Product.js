@@ -43,7 +43,7 @@ const Product = ({ productData }) => {
               <img src={trash} alt="icon" style={{ width: "20px" }} />
             </button>
           )}
-          {itemCount(state, id) > 0 && <span> {itemCount(state, id)}</span>}
+          {itemCount(state, id) > 0 && <span className={Styles.counter}> {itemCount(state, id)}</span>}
           {isInCart(state, id) ? (
             <button
               className={Styles.smallButton}
