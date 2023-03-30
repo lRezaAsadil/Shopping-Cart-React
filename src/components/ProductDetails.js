@@ -33,9 +33,11 @@ const ProductDetails = () => {
         <div className={Styles.buttonContainer}>
           <span className={Styles.price}> {price} $ </span>
 
-          <div>
+          <div className={Styles.buttonContainer}>
             {itemCount(state, product.id) > 1 && (
               <button
+              className={Styles.smallButton}
+
                 onClick={() =>
                   dispatch({ type: "DECREASE", payload: product })
                 }>
@@ -44,6 +46,8 @@ const ProductDetails = () => {
             )}
             {itemCount(state, product.id) === 1 && (
               <button
+              className={Styles.smallButton}
+
                 onClick={() =>
                   dispatch({ type: "REMOVE_ITEM", payload: product })
                 }>
@@ -52,11 +56,13 @@ const ProductDetails = () => {
             )}
 
             {itemCount(state, product.id) > 0 && (
-              <span> {itemCount(state, product.id)}</span>
+              <span className={Styles.counter}> {itemCount(state, product.id)}</span>
             )}
 
             {isInCart(state, product.id) ? (
               <button
+              className={Styles.smallButton}
+
                 onClick={() =>
                   dispatch({ type: "INCREASE", payload: product })
                 }>
