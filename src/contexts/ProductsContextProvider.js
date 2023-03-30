@@ -4,7 +4,7 @@ import React, { createContext, useState, useEffect } from "react";
 import { getProducts } from "../services/api";
 
 // Create Context
-const ProductsContext = createContext();
+export const ProductsContext = createContext();
 
 const ProductsContextProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
