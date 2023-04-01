@@ -11,10 +11,9 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu/Menu";
 import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
-import MenuIcon from '@mui/icons-material/Menu';
+import MenuIcon from "@mui/icons-material/Menu";
 
 const Navbar = () => {
- 
   const { state } = useContext(CartContext);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
@@ -56,9 +55,8 @@ const Navbar = () => {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit">
-                              <MenuIcon />
-
-              </IconButton>
+              <MenuIcon />
+            </IconButton>
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -77,38 +75,38 @@ const Navbar = () => {
                 display: { xs: "block", md: "none" },
               }}>
               <MenuItem onClick={handleCloseNavMenu}>
-              <div className={Styles.listContainer}>
-              <ul>
-                <li>
-                  <Link
-                    className={Styles.listContainerLink}
-                    to="/products/men's clothing">
-                    men's
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={Styles.listContainerLink}
-                    to="/products/women's clothing">
-                    women's
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={Styles.listContainerLink}
-                    to="/products/jewelery">
-                    jewelery
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={Styles.listContainerLink}
-                    to="/products/electronics">
-                    electronics
-                  </Link>
-                </li>
-              </ul>
-            </div>
+                <div className={Styles.listContainer}>
+                  <ul>
+                    <li>
+                      <Link
+                        className={Styles.listContainerLink2}
+                        to="/products/men's clothing">
+                        men's
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={Styles.listContainerLink2}
+                        to="/products/women's clothing">
+                        women's
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={Styles.listContainerLink2}
+                        to="/products/jewelery">
+                        jewelery
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={Styles.listContainerLink2}
+                        to="/products/electronics">
+                        electronics
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </MenuItem>
             </Menu>
           </Box>
@@ -177,7 +175,6 @@ const Navbar = () => {
         </Toolbar>
       </Container>
     </AppBar>
-  
   );
 };
 
