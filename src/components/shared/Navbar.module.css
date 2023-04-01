@@ -17,8 +17,8 @@
 }
 
 .productLink {
-  text-decoration: none;
-  color: #1a73e8;
+  text-decoration: none !important;
+  color: #ffffff;
   font-weight: bold;
   border-bottom: 3px solid #1a73e8;
   border-radius: 2px;
@@ -27,7 +27,7 @@
 }
 
 .productLink:hover {
-  color: #0b499b;
+  color: #c3c6cb;
   border-bottom-color: #0b499b;
 }
 
@@ -61,6 +61,17 @@
 }
 
 .listContainerLink {
+  margin: 0 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  padding-bottom:5px ;
+
+}
+.listContainerLink2 {
   margin: 0 10px;
   text-align: center;
   text-decoration: none;
